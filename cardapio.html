@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cardápio — Neto &amp; Silva Confeitaria Artesanal</title>
+  <meta name="description" content="Cardápio da Neto &amp; Silva: bolos, croissants, salgados e cafés especiais. Monte seu pedido e envie pelo WhatsApp.">
+  <link rel="icon" href="assets/img/marca/selo-creme.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="cardapio">
+  <div id="cabecalho"></div>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <p class="sobretitulo">Cardápio</p>
+        <h1>Saiu do forno hoje</h1>
+        <p class="lead">Toque em “Adicionar” para montar seu pedido. No final, é só enviar pelo WhatsApp.</p>
+      </div>
+    </section>
+
+    <div class="filtros">
+      <div class="container filtros__linha">
+        <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+        <input class="busca" id="busca" type="search" placeholder="Buscar no cardápio…" aria-label="Buscar no cardápio">
+      </div>
+    </div>
+
+    <section class="secao" style="padding-top:8px">
+      <div class="container" id="cardapio-lista" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+  <a id="barra-pedido" class="barra-pedido" href="pedidos.html" hidden><span data-resumo></span><span>Ver pedido</span></a>
+
+  <script src="js/config.js"></script>
+  <script src="js/data/cardapio.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/medicao.js"></script>
+  <script src="js/cardapio.js"></script>
+</body>
+</html>

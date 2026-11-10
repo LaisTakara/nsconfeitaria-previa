@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Privacidade e cookies — Neto &amp; Silva Confeitaria Artesanal</title>
+  <meta name="description" content="Como o site da Neto &amp; Silva trata seus dados e usa cookies.">
+  <link rel="icon" href="assets/img/marca/selo-creme.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="privacidade">
+  <div id="cabecalho"></div>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <p class="sobretitulo">Transparência</p>
+        <h1>Privacidade e cookies</h1>
+        <p class="lead">Em poucas palavras: o site não guarda os seus dados.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container texto-longo">
+        <div class="a-confirmar"><strong>Texto-base para revisão.</strong> Antes do lançamento, os donos (e, se possível, um advogado ou contador) devem conferir este texto e preencher os dados do responsável.</div>
+
+        <h2>Pedidos e encomendas</h2>
+        <p>Quando você monta um pedido ou preenche um formulário de encomenda, as informações <strong>não são enviadas nem armazenadas pelo site</strong>. Elas são usadas apenas para escrever a mensagem que abre no seu WhatsApp. A partir do momento em que você toca em enviar, a conversa acontece no WhatsApp, sujeita aos termos daquele serviço, e nós usamos os dados somente para atender o seu pedido.</p>
+
+        <h2>O que fica no seu aparelho</h2>
+        <p>Para o site funcionar, guardamos no seu navegador apenas os itens do pedido em andamento (produtos e quantidades) e a sua escolha sobre cookies. Não há nome, telefone ou endereço nesses registros, e você pode apagá-los limpando os dados do navegador.</p>
+
+        <h2>Cookies de medição e anúncios</h2>
+        <p>Com a sua autorização, podemos usar o Google Analytics, o Google Ads e o Pixel da Meta para saber quantas pessoas visitam o site, quais páginas são mais vistas e se os nossos anúncios trazem pedidos. Essas ferramentas só são carregadas depois que você toca em “Aceitar” no aviso de cookies. Se recusar, o site funciona normalmente.</p>
+        <p><button type="button" class="btn btn--contorno" id="rever-cookies">Rever minha escolha de cookies</button> <span class="nota" id="rever-cookies-msg" role="status"></span></p>
+
+        <h2>Fale com a gente</h2>
+        <p>Dúvidas sobre os seus dados ou pedidos de exclusão de conversas podem ser feitos pelo nosso WhatsApp.</p>
+        <p><a class="btn btn--whats" data-whats="Olá! Tenho uma dúvida sobre privacidade no site.">Chamar no WhatsApp</a></p>
+        <p class="nota">Responsável: Neto &amp; Silva Confeitaria Artesanal — CNPJ e endereço a preencher. Última atualização: novembro de 2026.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+  <script src="js/config.js"></script>
+  <script src="js/data/cardapio.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/medicao.js"></script>
+  <script>
+    document.getElementById("rever-cookies").addEventListener("click", () => {
+      const ativo = NS.reverCookies();
+      document.getElementById("rever-cookies-msg").textContent = ativo
+        ? "Escolha apagada. O aviso apareceu de novo no rodapé da tela."
+        : "No momento o site não usa cookies de medição.";
+    });
+  </script>
+</body>
+</html>

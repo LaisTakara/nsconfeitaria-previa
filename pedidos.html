@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pedidos — Neto &amp; Silva Confeitaria Artesanal</title>
+  <meta name="description" content="Faça seu pedido na Neto &amp; Silva: retirada na loja ou entrega na Rota dos Milagres. Envie pelo WhatsApp em poucos toques.">
+  <link rel="icon" href="assets/img/marca/selo-creme.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="pedidos">
+  <div id="cabecalho"></div>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="container">
+        <p class="sobretitulo">Pedidos do dia</p>
+        <h1>Seu pedido</h1>
+        <p class="lead">Confira os itens, diga como quer receber e envie pelo WhatsApp. A gente confirma em seguida.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container pedido-grade">
+        <div>
+          <div class="cartao">
+            <h2 style="font-size:1.8rem">Itens</h2>
+            <div id="itens-pedido"></div>
+            <div class="total" id="total-pedido" hidden><span>Total dos itens</span><span data-total></span></div>
+            <p class="nota" id="nota-entrega" style="margin:10px 0 0"></p>
+            <div class="botoes"><a class="btn btn--contorno" href="cardapio.html">Adicionar mais itens</a></div>
+          </div>
+
+          <div class="cartao" id="cartao-app">
+            <h2 style="font-size:1.8rem">Prefere pedir pelo app?</h2>
+            <p id="app-texto" class="nota" style="font-size:1rem"></p>
+            <a class="btn btn--contorno" id="app-link" hidden target="_blank" rel="noopener"></a>
+          </div>
+
+          <div class="cartao">
+            <h2 style="font-size:1.8rem">É para uma festa ou evento?</h2>
+            <p class="nota" style="font-size:1rem">Bolos inteiros, mesas de doces e grandes quantidades são feitos sob encomenda.</p>
+            <a class="btn btn--contorno" href="encomendas.html">Ir para encomendas</a>
+          </div>
+        </div>
+
+        <form class="cartao" id="form-pedido" novalidate>
+          <fieldset class="form-secao">
+            <legend>Seus dados</legend>
+            <div class="campos">
+              <div class="campo"><label for="p-nome">Seu nome <span class="obrig">*</span></label><input id="p-nome" name="nome" type="text" required autocomplete="name"></div>
+              <div class="campo">
+                <span class="campo__rotulo">Como quer receber? <span class="obrig">*</span></span>
+                <div class="opcoes" id="p-recebimento"></div>
+              </div>
+              <div class="campo" id="campo-endereco" hidden>
+                <label for="p-endereco">Endereço ou nome da pousada <span class="obrig">*</span></label>
+                <input id="p-endereco" name="endereco" type="text" autocomplete="street-address">
+                <p class="campo__dica">Inclua um ponto de referência, se puder.</p>
+              </div>
+              <div class="campo campo--meia"><label for="p-horario">Horário desejado</label><input id="p-horario" name="horario" type="time"><p class="campo__dica">Deixe em branco para “o quanto antes”.</p></div>
+              <div class="campo campo--meia"><label for="p-pagamento">Pagamento</label><select id="p-pagamento" name="pagamento"></select></div>
+              <div class="campo"><label for="p-obs">Observações</label><textarea id="p-obs" name="obs" placeholder="Ex.: sem canela, embalagem para presente…"></textarea></div>
+            </div>
+          </fieldset>
+          <p class="campo__erro" id="erro-pedido" role="alert" hidden></p>
+          <button class="btn btn--whats btn--bloco" type="submit">Enviar pedido pelo WhatsApp</button>
+          <p class="nota" style="margin-top:12px">Ao enviar, o WhatsApp abre com o pedido já escrito. O pedido só é confirmado depois da nossa resposta.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+  <script src="js/config.js"></script>
+  <script src="js/data/cardapio.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/medicao.js"></script>
+  <script src="js/pedidos.js"></script>
+</body>
+</html>
