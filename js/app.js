@@ -140,7 +140,7 @@
       slogan: cfg.marca.slogan,
       url: base + "/",
       image: base + "/assets/img/bolo-decorado.jpg",
-      logo: base + "/assets/img/marca/selo-creme.png",
+      logo: base + "/assets/img/marca/perfil.png",
       telephone: "+" + cfg.contato.whatsapp,
       servesCuisine: ["Confeitaria", "Cafeteria"],
       hasMenu: base + "/cardapio.html",
