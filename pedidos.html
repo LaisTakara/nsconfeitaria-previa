@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pedidos — Neto &amp; Silva Confeitaria Artesanal</title>
-  <meta name="description" content="Faça seu pedido na Neto &amp; Silva: retirada na loja ou entrega na Rota dos Milagres. Envie pelo WhatsApp em poucos toques.">
+  <meta name="description" content="Faça seu pedido na Neto &amp; Silva Confeitaria Artesanal, em Porto de Pedras, na Rota Ecológica dos Milagres.">
   <link rel="icon" type="image/png" href="assets/img/marca/icone-192.png">
   <link rel="apple-touch-icon" href="assets/img/marca/icone-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,30 @@
       <div class="container">
         <p class="sobretitulo">Pedidos do dia</p>
         <h1>Seu pedido</h1>
-        <p class="lead">Confira os itens, diga como quer receber e envie pelo WhatsApp. A gente confirma em seguida.</p>
+        <p class="lead" id="lead-pedidos">Confira os itens, diga como quer receber e envie pelo WhatsApp. A gente confirma em seguida.</p>
       </div>
     </section>
 
-    <section class="secao">
+    <section class="secao" id="pedido-app" hidden>
+      <div class="container" style="max-width:760px">
+        <div class="cartao">
+          <h2 style="font-size:1.8rem">Peça pelo cardápio digital</h2>
+          <p>Escolha os itens, informe como quer receber e finalize por lá. O pedido chega direto no balcão da confeitaria.</p>
+          <div class="botoes">
+            <a class="btn" data-app>Fazer meu pedido</a>
+            <a class="btn btn--contorno" href="cardapio.html">Ver o cardápio antes</a>
+          </div>
+          <p class="nota" style="margin-top:12px">O cardápio digital abre em uma nova aba. Dúvidas? <a data-whats="Olá! Tenho uma dúvida sobre um pedido.">Fale com a gente no WhatsApp</a>.</p>
+        </div>
+        <div class="cartao">
+          <h2 style="font-size:1.8rem">É para uma festa ou evento?</h2>
+          <p class="nota" style="font-size:1rem">Bolos inteiros, mesas de doces e grandes quantidades são feitos sob encomenda.</p>
+          <a class="btn btn--contorno" href="encomendas.html">Ir para encomendas</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="pedido-proprio">
       <div class="container pedido-grade">
         <div>
           <div class="cartao">

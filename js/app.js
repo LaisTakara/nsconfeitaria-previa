@@ -76,7 +76,7 @@
     const alvo = document.getElementById("cabecalho");
     if (!alvo) return;
     alvo.innerHTML = `
-      ${cfg.modoDemo ? '<div class="faixa-demo">Versão de demonstração — textos, preços e contatos são ilustrativos.</div>' : ""}
+      ${cfg.modoDemo ? '<div class="faixa-demo">Versão de demonstração — endereço, horários e fotos ainda serão confirmados.</div>' : ""}
       <header class="topo">
         <div class="container topo__linha">
           <a class="marca" href="index.html" aria-label="${NS.esc(cfg.marca.nome)} — página inicial">
@@ -86,7 +86,7 @@
           <nav id="nav" class="nav" aria-label="Principal">
             ${paginas.map((p) => `<a href="${p.href}"${p.id === atual ? ' aria-current="page"' : ""}>${p.nome}</a>`).join("")}
           </nav>
-          <a class="sacola" href="pedidos.html" aria-label="Ver meu pedido">${iconeSacola}<span class="sacola__n" hidden>0</span></a>
+          ${NS.modoApp ? "" : `<a class="sacola" href="pedidos.html" aria-label="Ver meu pedido">${iconeSacola}<span class="sacola__n" hidden>0</span></a>`}
         </div>
       </header>`;
     const btn = alvo.querySelector(".menu-btn");
@@ -171,7 +171,24 @@
     });
   }
 
+  // Com plataforma de pedidos configurada, o site não usa o carrinho próprio:
+  // os botões de pedido abrem a plataforma (ver config.pedidos.appPedidosUrl).
+  NS.modoApp = !!cfg.pedidos.appPedidosUrl;
+
+  // Preenche qualquer link com data-app com o endereço da plataforma de pedidos.
+  function ligarLinksApp() {
+    document.querySelectorAll("a[data-app]").forEach((a) => {
+      a.href = cfg.pedidos.appPedidosUrl;
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  }
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("a[data-app]") && NS.evento) NS.evento("pedido_app", { origem: document.body.dataset.pagina || "" });
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.toggle("modo-app", NS.modoApp);
     estado = ler();
     // Link com pedido pronto: pedidos.html?itens=coxinha:2,cafe-coado:1
     // (útil para promoções no Instagram ou QR code na loja)
@@ -189,6 +206,7 @@
     rodape();
     dadosEstruturados();
     ligarLinksWhats();
+    if (NS.modoApp) ligarLinksApp();
     atualizarSacola();
     document.addEventListener("ns:carrinho", atualizarSacola);
     document.dispatchEvent(new CustomEvent("ns:pronto"));

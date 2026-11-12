@@ -19,7 +19,7 @@ NS.config = {
   site: {
     // Endereço definitivo do site (usado nos dados enviados ao Google).
     // Se o domínio mudar, atualize também sitemap.xml e robots.txt.
-    url: "https://nsconfeitaria.com.br",
+    url: "https://netoesilvaconfeitaria.com.br",
   },
 
   // Medição e anúncios. Enquanto os três códigos estiverem vazios, o site não
@@ -45,7 +45,7 @@ NS.config = {
 
   endereco: {
     linha1: "Rota Ecológica dos Milagres", // rua e número — CONFIRMAR
-    linha2: "Alagoas, Brasil", // cidade (São Miguel dos Milagres? Porto de Pedras?) — CONFIRMAR
+    linha2: "Porto de Pedras, Alagoas", // cidade tirada do MenuDino dos donos — CONFIRMAR
     mapaUrl: "", // link do Google Maps — CONFIRMAR
   },
 
@@ -56,10 +56,14 @@ NS.config = {
   ],
 
   pedidos: {
-    // Quando existir um app/plataforma de pedidos, colar o link aqui.
-    // Enquanto estiver vazio, o site usa o próprio carrinho + WhatsApp.
-    appPedidosUrl: "",
-    appPedidosNome: "App de pedidos",
+    // Plataforma de pedidos dos donos (MenuDino, ligado ao sistema de caixa e
+    // à impressora da loja). Com este link preenchido, os botões de pedido do
+    // site abrem o MenuDino. Se ficar vazio (""), o site volta a usar o próprio
+    // carrinho + WhatsApp.
+    // CONFIRMAR: este é o endereço geral; o que os donos enviaram terminava em
+    // "?localmode=on" (pedido feito dentro da loja).
+    appPedidosUrl: "https://netoesilvaconfeitaria.menudino.com/",
+    appPedidosNome: "cardápio digital",
     aceitaEntrega: true, // CONFIRMAR
     aceitaRetirada: true,
     taxaEntregaTexto: "Taxa de entrega combinada pelo WhatsApp conforme a localização.", // CONFIRMAR

@@ -52,6 +52,7 @@
   const MAPA = {
     adicionar_item:     { ga: "add_to_cart",     meta: "AddToCart" },
     pedido_whatsapp:    { ga: "begin_checkout",  meta: "InitiateCheckout" },
+    pedido_app:         { ga: "begin_checkout",  meta: "InitiateCheckout" },
     encomenda_whatsapp: { ga: "generate_lead",   meta: "Lead" },
     clique_whatsapp:    { ga: "clique_whatsapp", meta: "Contact" },
   };

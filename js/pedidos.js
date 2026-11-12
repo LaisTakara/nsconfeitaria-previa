@@ -7,6 +7,15 @@
 
   document.addEventListener("ns:pronto", () => {
     const cfg = NS.config.pedidos;
+
+    // ---- com plataforma de pedidos, a página só encaminha para ela
+    if (NS.modoApp) {
+      document.getElementById("pedido-proprio").hidden = true;
+      document.getElementById("pedido-app").hidden = false;
+      document.getElementById("lead-pedidos").textContent =
+        "Os pedidos são feitos no nosso cardápio digital: você escolhe, confirma e a gente já recebe na loja.";
+      return;
+    }
     const lista = document.getElementById("itens-pedido");
     const total = document.getElementById("total-pedido");
     const form = document.getElementById("form-pedido");

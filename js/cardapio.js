@@ -9,6 +9,7 @@
   function acaoHtml(item) {
     if (item.sobEncomenda) return `<a class="btn btn--contorno btn-add" href="encomendas.html">Encomendar</a>`;
     if (item.disponivel === false) return `<span class="nota">Esgotado hoje</span>`;
+    if (NS.modoApp) return `<a class="btn btn-add" data-app href="${NS.esc(NS.config.pedidos.appPedidosUrl)}" target="_blank" rel="noopener" aria-label="Pedir ${NS.esc(item.nome)} no cardápio digital">Pedir</a>`;
     const q = NS.carrinho.qtd(item.id);
     if (!q) return `<button class="btn btn-add" data-mais="${item.id}" aria-label="Adicionar ${NS.esc(item.nome)} ao pedido">Adicionar</button>`;
     return `<div class="passo" role="group" aria-label="Quantidade de ${NS.esc(item.nome)}">
@@ -58,7 +59,7 @@
     });
     const barra = document.getElementById("barra-pedido");
     if (barra) {
-      const n = NS.carrinho.totalItens();
+      const n = NS.modoApp ? 0 : NS.carrinho.totalItens();
       barra.hidden = n === 0;
       document.body.classList.toggle("tem-barra", n > 0);
       barra.querySelector("[data-resumo]").textContent =
