@@ -281,3 +281,6 @@ body.tem-barra .whats-flutuante { bottom: 88px; }
 .texto-longo { max-width: 760px; }
 .texto-longo h2 { font-size: 1.5rem; margin-top: 1.6em; }
 .rodape__fim a { text-decoration: underline; }
+
+/* Elementos marcados como ocultos nunca aparecem, mesmo com display definido. */
+[hidden] { display: none !important; }

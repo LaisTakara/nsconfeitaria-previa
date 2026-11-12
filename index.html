@@ -5,7 +5,7 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neto &amp; Silva — Confeitaria Artesanal na Rota dos Milagres</title>
-  <meta name="description" content="Confeitaria artesanal na Rota Ecológica dos Milagres, Alagoas. Bolos, croissants, cafés especiais, pedidos online e encomendas para casamentos, aniversários e eventos.">
+  <meta name="description" content="Confeitaria artesanal na Rota Ecológica dos Milagres, Alagoas. Bolos, croissants, cafés especiais, pedidos pelo WhatsApp e encomendas para casamentos, aniversários e eventos.">
   <meta property="og:title" content="Neto &amp; Silva — Confeitaria Artesanal">
   <meta property="og:description" content="O detalhe que faz seu dia mais doce. Bolos recheados, salgados e cafés na Rota dos Milagres.">
   <meta property="og:image" content="https://netoesilvaconfeitaria.com.br/assets/img/marca/perfil.png">
@@ -26,7 +26,7 @@
         <div>
           <p class="sobretitulo">Confeitaria artesanal · Rota dos Milagres, AL</p>
           <h1>O detalhe que faz seu dia mais <span class="script">doce</span></h1>
-          <p class="lead">Bolos, croissants e cafés especiais preparados todos os dias, para saborear na loja, receber onde você estiver ou celebrar os seus melhores momentos.</p>
+          <p class="lead">Bolos, croissants e cafés especiais preparados todos os dias, para saborear na loja, levar para casa ou celebrar os seus melhores momentos.</p>
           <div class="botoes">
             <a class="btn" href="cardapio.html">Ver cardápio</a>
             <a class="btn btn--contorno" href="encomendas.html">Fazer uma encomenda</a>
@@ -47,7 +47,7 @@
           <a class="caminho" href="pedidos.html">
             <span class="caminho__num">01</span>
             <h3>Pedidos do dia</h3>
-            <p>Escolha no cardápio e faça seu pedido online em poucos toques. Ele chega direto no balcão da confeitaria.</p>
+            <p>Escolha no cardápio, monte seu pedido e envie pelo WhatsApp. É só passar na loja para retirar.</p>
             <span class="caminho__link">Fazer pedido →</span>
           </a>
           <a class="caminho" href="encomendas.html">
@@ -144,7 +144,9 @@
       const c = NS.config;
       document.getElementById("info-visita").innerHTML =
         `<li><span>Endereço</span><span>${NS.esc(c.endereco.linha1)}, ${NS.esc(c.endereco.linha2)}</span></li>` +
-        c.horarios.map((h) => `<li><span>${NS.esc(h.dias)}</span><span>${NS.esc(h.horas)}</span></li>`).join("") +
+        (c.horarios.length
+          ? c.horarios.map((h) => `<li><span>${NS.esc(h.dias)}</span><span>${NS.esc(h.horas)}</span></li>`).join("")
+          : `<li><span>Horários</span><span>Consulte pelo WhatsApp</span></li>`) +
         `<li><span>WhatsApp</span><span>${NS.esc(c.contato.whatsappExibicao)}</span></li>`;
       const mapa = document.getElementById("link-mapa");
       if (c.endereco.mapaUrl) { mapa.href = c.endereco.mapaUrl; mapa.hidden = false; }

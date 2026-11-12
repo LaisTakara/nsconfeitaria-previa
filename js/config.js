@@ -8,7 +8,7 @@ window.NS = window.NS || {};
 
 NS.config = {
   // Mostra a faixa "versão de demonstração" no topo. Trocar para false no lançamento.
-  modoDemo: true,
+  modoDemo: false,
 
   marca: {
     nome: "Neto & Silva",
@@ -35,10 +35,10 @@ NS.config = {
 
   contato: {
     // Formato internacional, só números: 55 + DDD + número.
-    // Informado em 10/11/2026. CONFIRMAR com os donos se é o número definitivo
-    // e se leva o nono dígito (81 9 9347-9275).
-    whatsapp: "558193479275",
-    whatsappExibicao: "(81) 9347-9275",
+    // Número que recebe os pedidos, informado em 12/11/2026 (substitui o
+    // (81) 9347-9275 usado na demonstração).
+    whatsapp: "5582987760188",
+    whatsappExibicao: "(82) 98776-0188",
     instagram: "", // ex.: "https://instagram.com/netoesilva"  CONFIRMAR
     email: "", // CONFIRMAR
   },
@@ -49,22 +49,19 @@ NS.config = {
     mapaUrl: "", // link do Google Maps — CONFIRMAR
   },
 
-  // CONFIRMAR todos os horários
-  horarios: [
-    { dias: "Terça a domingo", horas: "8h às 19h" },
-    { dias: "Segunda", horas: "Fechado" },
-  ],
+  // Horários reais ainda não informados pelos donos (12/11/2026). Enquanto a
+  // lista estiver vazia, o site mostra "consulte pelo WhatsApp".
+  // Formato: { dias: "Terça a domingo", horas: "8h às 19h" }
+  horarios: [],
 
   pedidos: {
-    // Plataforma de pedidos dos donos (MenuDino, ligado ao sistema de caixa e
-    // à impressora da loja). Com este link preenchido, os botões de pedido do
-    // site abrem o MenuDino. Se ficar vazio (""), o site volta a usar o próprio
-    // carrinho + WhatsApp.
-    // CONFIRMAR: este é o endereço geral; o que os donos enviaram terminava em
-    // "?localmode=on" (pedido feito dentro da loja).
-    appPedidosUrl: "https://netoesilvaconfeitaria.menudino.com/",
+    // Link de uma plataforma externa de pedidos. Com ele preenchido, os botões
+    // de pedido do site abrem essa plataforma. Vazio (""), o site usa o próprio
+    // carrinho + WhatsApp. Os donos decidiram NÃO usar o MenuDino (D12); o
+    // pedido na mesa virá da plataforma da Caval.
+    appPedidosUrl: "",
     appPedidosNome: "cardápio digital",
-    aceitaEntrega: true, // CONFIRMAR
+    aceitaEntrega: false, // 12/11/2026: por enquanto só retirada na loja. true reativa a entrega.
     aceitaRetirada: true,
     taxaEntregaTexto: "Taxa de entrega combinada pelo WhatsApp conforme a localização.", // CONFIRMAR
     pedidoMinimoEntrega: 0, // em reais; 0 = sem mínimo — CONFIRMAR

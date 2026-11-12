@@ -30,7 +30,12 @@
       .map((m, i) => `<label class="opcao"><input type="radio" name="recebimento" value="${m}"${i === 0 ? " checked" : ""}><span>${m}</span></label>`)
       .join("");
     document.getElementById("p-pagamento").innerHTML = cfg.formasPagamento.map((f) => `<option>${NS.esc(f)}</option>`).join("");
-    document.getElementById("nota-entrega").textContent = cfg.aceitaEntrega ? cfg.taxaEntregaTexto : "";
+    document.getElementById("nota-entrega").textContent = cfg.aceitaEntrega
+      ? cfg.taxaEntregaTexto
+      : "No momento, os pedidos pelo site são para retirada na loja.";
+    if (!cfg.aceitaEntrega)
+      document.getElementById("lead-pedidos").textContent =
+        "Confira os itens, diga a que horas passa para retirar e envie pelo WhatsApp. A gente confirma em seguida.";
 
     // ---- cartão do app de pedidos (aparece como "em breve" enquanto não há link)
     const appLink = document.getElementById("app-link");
@@ -40,7 +45,8 @@
       appLink.href = cfg.appPedidosUrl;
       appLink.hidden = false;
     } else {
-      document.getElementById("app-texto").textContent = "Em breve: pedidos com pagamento online. Por enquanto, envie pelo WhatsApp — é rapidinho.";
+      // Sem plataforma de pedidos, o cartão não aparece.
+      document.getElementById("cartao-app").hidden = true;
     }
 
     const recebimento = () => form.elements.recebimento.value;

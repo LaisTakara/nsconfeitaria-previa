@@ -110,7 +110,9 @@
           </div>
           <div>
             <h2>Horários</h2>
-            <ul>${cfg.horarios.map((h) => `<li><span>${NS.esc(h.dias)}</span> ${NS.esc(h.horas)}</li>`).join("")}</ul>
+            <ul>${cfg.horarios.length
+              ? cfg.horarios.map((h) => `<li><span>${NS.esc(h.dias)}</span> ${NS.esc(h.horas)}</li>`).join("")
+              : "<li>Consulte pelo WhatsApp</li>"}</ul>
           </div>
           <div>
             <h2>Fale com a gente</h2>
